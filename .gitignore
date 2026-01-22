@@ -1,0 +1,17 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+
+# Environment vars
+.env
+
+# Demos / temps (add more as needed)
+*_demo.py
+rag_from_txt.py
+cricket_knowledge.txt
+manual_parallel_chains.py
