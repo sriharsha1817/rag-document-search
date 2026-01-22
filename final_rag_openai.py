@@ -20,9 +20,10 @@ class RAGAnswer(BaseModel):
 
 @st.cache_resource
 def load_models():
-    api_key = os.getenv("OPENAI_API_KEY")
+    # Try Streamlit secrets first, then environment variables
+    api_key = st.secrets.get("OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY")
     if not api_key:
-        st.error("OpenAI API key not found. Please check your .env file.")
+        st.error("OpenAI API key not found. Please add it to Streamlit secrets or .env file.")
         return None, None, None
     
     llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0, api_key=api_key)
