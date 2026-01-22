@@ -3,78 +3,110 @@
 **Infosys Springboard Virtual Internship Project**  
 **RAG (Retrieval-Augmented Generation) Application**
 
-📱 **Live Demo**
-**[Try the App](https://document-search-and-knowledge-retrieval.streamlit.app/)**
+Live Demo:
+https://rag-document-search-bgc2rwcbs9ewt4yamckfbh.streamlit.app/
 
-## 🎯 **Project Overview**
-Production-ready **Streamlit + LangChain + Gemini AI** powered RAG app for **semantic document Q&A**.
+This repository contains my Retrieval-Augmented Generation (RAG) project that enables users to upload different types of documents and have meaningful conversations about their contents using semantic search and large language models (LLMs).
 
-**Core Technologies**:
-- ✅ **Document Loaders**: PDF, TXT, PPTX multi-format support
-- ✅ **Lazy Loading**: Memory-optimized streaming  
-- ✅ **Vector Embeddings**: Google Gemini Embedding-001
-- ✅ **Semantic Search**: Cosine similarity retrieval
-- ✅ **Structured Output**: PydanticOutputParser JSON
-- ✅ **Source Attribution**: Exact chunk citations
-- ✅ **Confidence Scoring**: Model reliability metrics
+🚀 Project Overview
 
-## ✨ **Features**
-| Feature | Details |
-|---------|---------|
-| **Multi-format Upload** | PDF, TXT, PPTX files |
-| **Lazy Document Loading** | Generator-based memory optimization |
-| **Top-K Retrieval** | Semantic search from document chunks |
-| **Structured Responses** | JSON with answer + sources + confidence |
-| **Source Attribution** | Shows exact document chunks retrieved |
-| **Confidence Metrics** | Model confidence scores |
-| **Chat Memory** | Conversational context preservation |
-| **Fast Deployment** | Streamlit Cloud ready |
+This is an AI-powered document understanding application built with Python, Streamlit, LangChain, and Google Gemini.
+The application allows users to upload documents (PDF, TXT, PPTX) and ask questions about their contents, returning structured answers with source attribution and confidence scores.
 
-## 
+This project was developed as part of the Infosys Springboard Virtual Internship 2026.
 
-### **Quick Test Steps**:
-1. **Upload any document** (PDF/TXT/PPTX)
-2. **Ask any question** about the content
-3. **Get structured answer** with sources cited
+🧠 Core Functionality
 
-### **Example Workflows**:
-📄 Upload: Research Paper / Article / PPT
-🤔 Query: "What are the key findings?"
-📊 Output: Answer + Top 3 sources + Confidence 95%
+Upload and process files in PDF, TXT, and PPTX formats
 
+Perform semantic search using vector embeddings
 
-## 🛠️ **Tech Stack**
-Frontend: Streamlit (Python)
-Backend: LangChain Framework
-LLM: Google Gemini 1.5 Flash
-Embeddings: Gemini Embedding-001 (3072 dimensions)
-Vector Search: Cosine Similarity
-Parsing: PydanticOutputParser (Structured Output)
-Deployment: Streamlit Cloud
+Retrieve the most relevant document chunks in real time
 
+Generate context-aware answers using an LLM
 
+Provide source citations and confidence metrics
 
-## 🚀 **Local Installation*
-```bash
-# Clone repository
-git clone https://github.com/kogantikarthik/AI-based-Document-Search-and-Knowledge-Retrieval-with-Conversational-Interface.git
-cd AI-based-Document-Search-and-Knowledge-Retrieval-with-Conversational-Interface
-# Create virtual environment
-python3 -m venv venv
-source venv/bin/activate  # Mac/Linux
-# or
-venv\Scripts\activate     # Windows
-# Install dependencies
-pip install -r requirements.txt
-# Setup API key
-cp .env.example .env
-# Edit .env and add your GOOGLE_API_KEY
-# Run application
-streamlit run final_rag_project.py
+Preserve conversational context across multiple queries
 
+🛠️ Tech Stack
 
+Frontend
 
-📋 Requirements
+Streamlit (Python)
+
+Backend & AI
+
+LangChain
+
+Google Gemini 1.5 Flash (LLM)
+
+Vector Search
+
+Google Gemini Embedding-001 (3072 dimensions)
+
+Cosine similarity semantic search
+
+Structured Output
+
+PydanticOutputParser for JSON responses
+
+Deployment
+
+Streamlit Cloud
+
+🔍 How It Works
+
+A user uploads a document (PDF, TXT, PPTX)
+
+The document is loaded and chunked
+
+Each chunk is embedded into a vector
+
+Vectors are stored in a vector database
+
+User queries are embedded and matched
+
+Top-K relevant chunks are retrieved
+
+The LLM generates a structured answer
+
+Answer + sources + confidence score are shown
+
+📁 Supported Document Formats
+
+PDF files
+
+Plain text (TXT)
+
+PowerPoint (PPTX)
+
+🧪 Features
+
+✔ Multi-format upload support
+✔ Memory-efficient lazy document processing
+✔ Top-K semantic retrieval
+✔ Structured answers with JSON formatting
+✔ Source citation for every answer
+✔ Confidence scoring
+✔ Conversational memory
+
+📌 Example Workflow
+
+Upload a research paper, article, or presentation
+
+Ask:
+“What are the key findings of this document?”
+
+Get a response like:
+
+Answer summary
+
+Top-3 relevant chunks
+
+Confidence score
+
+🧾 Dependencies
 streamlit>=1.28.0
 langchain>=0.1.0
 langchain-google-genai>=0.0.5
@@ -82,52 +114,69 @@ python-dotenv>=1.0.0
 scikit-learn>=1.3.0
 pypdf>=3.17.0
 
+🖥️ Running the Project Locally
+Step 1 — Clone the Repo
+git clone https://github.com/sriharsha1817/rag-document-search.git
+cd rag-document-search
+
+Step 2 — Set Up Virtual Environment
+python3 -m venv venv
+source venv/bin/activate   # macOS/Linux
+venv\Scripts\activate      # Windows
+
+Step 3 — Install Dependencies
+pip install -r requirements.txt
+
+Step 4 — Add Environment Variables
+cp .env.example .env
 
 
-📊 How It Works
-1. Document Upload
-Supports: PDF, TXT, PPTX
-Lazy loading for memory efficiency
-Automatic text extraction
-2. Vector Embedding
-Convert text chunks to 3072-dim vectors
-Gemini Embedding-001 model
-Cosine similarity indexing
-3. Query Processing
-User question → vector embedding
-Semantic search (top-K retrieval)
-Chunk ranking by similarity
-4. Response Generation
-Retrieved chunks → LLM context
-Structured output parsing
-JSON format: answer + sources + confidence
-🎓 Implementation Highlights
-LangChain Components:
-TextLoader - Load TXT files
-PyPDFLoader - Extract PDF content
-ChatGoogleGenerativeAI - Gemini LLM
-GoogleGenerativeAIEmbeddings - Vector embeddings
-PydanticOutputParser - Structured JSON responses
+Open .env and add your Google API key (for Gemini)
+
+Step 5 — Run the App
+streamlit run final_rag_project.py
 
 
+Visit the local URL displayed in your terminal to interact with the app.
 
+🛠️ Key Implementation Components
 
-RAG Pipeline:
-Document → Chunks → Embeddings → Vector DB → Query → Embedding → Semantic Search → Top-K Chunks → LLM Context → Structured Answer
+Document Loaders
 
+TextLoader – Reads TXT files
 
+PyPDFLoader – Extracts text from PDFs
 
-📚 Project Learning Outcomes
-✅ Document loading & text preprocessing
-✅ Vector embeddings & semantic search
-✅ LLM integration & prompt engineering
-✅ Structured output parsing (Pydantic)
-✅ Production-ready RAG systems
-✅ Cloud deployment (Streamlit)
+Embeddings & Retrieval
 
+GoogleGenerativeAIEmbeddings – Embeddings
 
+Cosine similarity for semantic search
 
-Author: Koganti Karthik Chowdary
-College: 3rd Year BTech - Computer Science( Artificial Intelligence And Machine Learning)
-Internship: Infosys Springboard 2026
-Contact: kogantikarthik21@gmail.com
+Conversational AI
+
+ChatGoogleGenerativeAI – Generates answers
+
+PydanticOutputParser – Structured JSON
+
+🧠 What I Learned
+
+While building this project I gained hands-on experience with:
+
+Document parsing and preprocessing
+
+Vector embeddings and semantic search
+
+LLM integration and prompt engineering
+
+Structured output parsing using Pydantic
+
+Building production-ready RAG systems
+
+Deploying AI applications on cloud platforms
+
+📬 Contact
+
+Developed by: Bommineni Sri Harsha
+Email: sriharsha8171@gmail.com
+]
